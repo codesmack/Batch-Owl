@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox Layout</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/fontawesome.min.css" integrity="sha512-P9vJUXK+LyvAzj8otTOKzdfF1F3UYVl13+F8Fof8/2QNb8Twd6Vb+VD52I7+87tex9UXxnzPgWA3rH96RExA7A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        .box-bisque{
+            background-color: bisque;
+            border: 1px solid black;
+        }
+        .box-orange{
+            background-color: orange;
+            border: 1px solid black;
+        }
+        .box-purple{
+            background-color: rgb(251, 15, 251);
+            border: 1px solid black;
+        }
+
+        .box{
+            height: 40px;
+            width: 200px;
+        }
+
+        .box-container{
+            display: flex;
+            flex-direction: row;
+            border: 1px salmon dashed;
+            justify-content: flex-end;
+            height: 350px;
+            width: 550px;
+        }
+    </style>
+</head>
+<body>
+    hello
+    <h2>Fixed Child- Layouts</h2>
+
+    <div class="box-container">
+        <div class="box-bisque box">
+            1
+        </div>
+        <div class="box-orange box" >2</div>
+        <!-- <div class="box-purple box" >3</div> -->
+    </div>
+
+    <!-- <h2>Sharing Space</h2>
+    <div class="box-container">
+        <div class="box-bisque box" ></div>
+        <div class="box-orange box" ></div>
+        <div class="box-purple box" ></div>
+    </div>
+
+    <h2>Card based Layouts</h2>
+    <div class="box-container">
+        <div class="box-bisque box" ></div>
+        <div class="box-orange box" ></div>
+        <div class="box-purple box" ></div>
+        <div class="box-orange box" ></div>
+        <div class="box-purple box" ></div>
+        <div class="box-bisque box" ></div>
+        <div class="box-bisque box" ></div>
+        <div class="box-orange box" ></div>
+        <div class="box-purple box" ></div>
+    </div> -->
+</body>
+</html>

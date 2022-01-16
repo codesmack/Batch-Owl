@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>
+            Add Max Income value, currently 80 as input control
+        </li>
+    </ul>
+    Earning: <input type="number" name="" id="txtEarn" value="10"> <br><br>
+    Bonus Factor <input type="number" name="" id="txtbonusFactor" value="3"><br><br>
+    <button onclick="calculateBonus()">Bonus</button>
+</body>
+</html>
+<script>
+function calculateBonus()
+{
+    let l = console.log;
+    let initialIncome = document.getElementById("txtEarn").value;
+    let income = initialIncome;
+    let bonusFactor = document.getElementById("txtbonusFactor").value;
+
+    while(income < 80)  //condn should become false. otherwise infinite 
+    {
+        income = income / bonusFactor;
+        l(income);
+    }
+
+    l("loop is over. income : " + initialIncome );
+    l("loop is over. bonus : " + (income- initialIncome) );
+   
+}
+
+//Holiday Bonus
+//* 3
+
+//max bonus
+//80 ... and above
+
+</script>

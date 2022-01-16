@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Switch</h1>
+    <ul>
+        <li>Convert input textbox to select dropdown</li>
+    </ul>
+    <input type="text" name="" id="txtName">
+    <button onclick="isAllowed()">Allowed</button>
+    <p id="paraResult">
+
+    </p>
+</body>
+</html>
+<script>
+    function isAllowed()
+    {
+        let memberType = document.querySelector("#txtName").value.toLowerCase();
+
+        switch (memberType)
+        {
+            case "prime":
+                document.querySelector("#paraResult").innerText = "You are allowed.";
+                break;
+            case "standard":
+                document.querySelector("#paraResult").innerText = "You are allowed with nominal fee of Rs. 10";
+                break;
+            case "regular":
+                document.querySelector("#paraResult").innerText = "You are not allowed for this event.";
+                break;
+            default:
+                 document.querySelector("#paraResult").innerText = "Sorry, You are not allowed.";
+                break;
+        }
+
+    }
+</script>

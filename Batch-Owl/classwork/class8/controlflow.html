@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control Flows</title>
+</head>
+
+<body>
+
+    <div style="display: none;">
+        <h1>Shopping Mart</h1>
+        <p>
+            Select Membership Type:
+            <select name="" id="selectMemberType">
+                <option value="guest">Guest</option>
+                <option value="standard">Standard</option>
+                <option value="premium">Premium</option>
+                <option value="">None</option>
+            </select>
+        </p>
+        <button onclick="onDiscountClicked()">Show Discount</button>
+        <p id="paraResult">
+        </p>
+    </div>
+    <div>
+        <h1>Loops or Iteration</h1>
+        No. of Lines to print <input type="number" id="loopCount" value="3"> <br><br>
+        character to print <input type="text" id="charToPrint" value="#"><br><br>
+        <button onclick="printCharacter()">Print</button>
+        <p id="paraCharacters">
+
+        </p>
+    </div>
+</body>
+
+</html>
+<script>
+    let l = console.log;
+
+
+    function printCharacter() {
+        let maxLoop = document.querySelector("#loopCount").value;
+        let charToPrint = document.querySelector("#charToPrint").value;
+        let finalMsg = '';
+
+        for (let i = 0;   //intialization part - executes only once
+            i < maxLoop;   //comparison part - executes for every loop
+            i++   //increment or decrement part - executes for every loop
+        ) {
+           
+            let msg = '';
+            for(let j = -1;   //intialization part - executes only once
+            j < i;   //comparison part - executes for every loop
+            j++   //increment or decrement part - executes for every loop
+            )
+            {
+                if(msg == '')
+                    msg = charToPrint;
+                else
+                    msg = msg + "     " + charToPrint;
+            }
+
+            l(msg);
+            finalMsg = finalMsg + msg + "\n";
+            
+        }
+
+        document.getElementById("paraCharacters").innerText = finalMsg;
+
+    }
+
+
+
+
+    function onDiscountClicked() {
+        let msg = '';
+        let memberType = document.getElementById("selectMemberType").value;
+        l(memberType);
+        switch (memberType) {
+            case "guest": l('discount is 5%');
+                msg = 'discount is 5%';
+                break;
+            case "premium": l('discount is 25%');
+                msg = 'discount is 25%';
+                break;
+            case "standard": l('discount is 10%');
+                msg = 'discount is 10%';
+                break;
+            default:
+                l('discount is not available right now!');
+                msg = 'discount is none';
+                break;
+        }
+
+        document.getElementById("paraResult").innerText = msg;
+    }
+</script>

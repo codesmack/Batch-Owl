@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopFast</title>
+    <style>
+       .hide{
+           display: none;
+       }
+    </style>
+</head>
+<body>
+    <h1>Welcome to ShopFast</h1>
+    <div id="container">
+        <div class="shoppingItem">
+            <img src="../resources/tea.jfif" alt="Tata Tea">
+            <ul>
+                <li>
+                    Rs. 250
+                </li>
+                <li style="list-style-type: none;padding-top: 20px;">
+                    <button onclick="addToCart()">Add to Cart</button>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div id="paraResult" class="hide">
+        <ul id="myShopList">
+            <li>
+                Tea - <label id="lblQty">1</label> - Rs.<label id="lblPrice">250</label>
+            </li>
+        </ul>
+    </div>
+    <button>Submit Order</button>
+</body>
+</html>
+<script>
+    const paraResult = document.getElementById("paraResult");
+    const lblQty = document.getElementById("lblQty");
+    const lblPrice = document.getElementById("lblPrice");
+
+    let teaTotalQty = 1;
+    let teaPrice = 250;
+    let teaTotalPrice = 250;
+
+
+    function addToCart()
+    {
+        if(paraResult.classList != "")
+        {
+            paraResult.classList = "";
+
+        }
+        else{
+            teaTotalQty++;
+            teaTotalPrice = teaTotalPrice + teaPrice;
+            lblQty.innerText = teaTotalQty;
+            lblPrice.innerText = teaTotalPrice;
+        }
+        
+    }
+
+</script>

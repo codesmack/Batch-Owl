@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Game</title>
+    <style>
+        td{
+            /* border: 1px solid green; */
+            padding: 5px;
+        }
+
+        #paraResult{
+            color: cadetblue;
+            font-size: larger;
+        }
+    </style>
+</head>
+<body>
+    <h1>Crossword</h1>
+    <ul>
+        <li>
+            Down:
+            <ol>
+                <li>Opposite of Bottom</li>
+            </ol>
+        </li>
+        <li>
+            Across:
+            <ol>
+                <li>Plant's Home</li>
+            </ol>
+        </li>
+    </ul>
+    
+    <table>
+        <tr>
+            <td></td>
+            <td>
+                1]
+                <input id="row1col2" type="text" maxlength="1">
+            </td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+                1]
+                <input id="row2col1" type="text" maxlength="1">
+            </td>
+            <td>
+                <input id="row2col2" type="text" maxlength="1">
+            </td>
+            <td>
+                <input id="row2col3" type="text" maxlength="1">
+            </td>
+        </tr>
+        <tr>
+            <td>
+
+            </td>
+            <td>
+                <input id="row3col2" type="text" maxlength="1">
+            </td>
+            <td>
+
+            </td>
+        </tr>
+       
+    </table>
+
+    <button onclick="checkAnswers()">Submit Answer</button>
+    <p id="paraResult">
+
+    </p>
+</body>
+</html>
+<script>
+    const paraResult = document.getElementById("paraResult");
+    const row1col2 = document.getElementById("row1col2");
+    let row2col1 = document.getElementById("row2col1");
+    let row2col2 = document.getElementById("row2col2");
+    let row2col3 = document.getElementById("row2col3");
+    let row3col2 = document.getElementById("row3col2");
+
+    function checkAnswers(){
+        paraResult.innerText = "";
+        let resultOfDown = checkDown();
+        checkAcross();
+    }
+
+    function checkDown(){
+        
+
+        if(row1col2.value == "T"
+        && row2col2.value == "O"
+        && row3col2.value == "P")
+        {
+            paraResult.innerText = "Down is correct \n"; 
+        }
+        else{
+            paraResult.innerText = "Down is Incorrect. \n"; 
+        }
+    }
+
+    function checkAcross(){
+        if(row2col1.value == "P"
+        && row2col2.value == "O"
+        && row2col3.value == "T")
+        {
+            paraResult.innerText = 
+            paraResult.innerText + 
+            "Across is correct."; 
+        }
+        else{
+            paraResult.innerText = "Across is Incorrect."; 
+        }
+    }
+</script>

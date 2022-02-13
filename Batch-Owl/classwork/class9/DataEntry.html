@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UI Mock</title>
+    <style>
+        .bigText{
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+    Name: <input type="text" name="" id="txtName" class="bigText" onblur="onBlurTextBox()" >
+    <p>
+        Search: <input type="text" name="" id="txtSearch" class="bigText" onblur="onSearchBlur()" >
+        
+    </p>
+    
+    <p id="paraResult" class="bigText">
+
+    </p>
+</body>
+</html>
+
+<script>
+    let l = console.log;
+    let names = ['Mike','Mohan','Sam','Silly'];
+    let filteredNames = names;
+    const paraResult = document.getElementById("paraResult");  //HTML Para Element, innerText, innerHTML
+    const txtName = document.querySelector("#txtName");  //HTML Input Element, value property
+    const txtSearch = document.querySelector("#txtSearch"); 
+
+    function onBlurTextBox(){
+        l('onBlurTextBox');
+        if(txtName.value.trim() != "")
+        {
+            names.push(txtName.value);
+            txtName.value = "";
+
+            filteredNames = names;
+            displayNames();
+        }
+    }
+
+    function searchCondition(name)
+    {
+        l(name);
+        let doAdd = (name.indexOf(txtSearch.value) != -1); 
+        return doAdd;
+    }
+
+
+    function onSearchBlur()
+    {
+        if(txtSearch.value.trim() != "")
+        {
+            //using Array.prototype.Filter function => High Order Functions (parameters => function)
+            //filteredNames = names.filter(searchCondition);
+
+            filteredNames = [];
+            for (let index = 0; index < names.length; index++) {
+                const name = names[index];
+                let stringExist = (name.indexOf(txtSearch.value) != -1); 
+                if(stringExist)
+                    filteredNames.push(name);
+            }
+
+            l(filteredNames);
+            displayNames();
+        }
+    }
+
+    function displayNames()
+    {
+        paraResult.innerText = filteredNames;
+    }
+
+    displayNames();
+</script>

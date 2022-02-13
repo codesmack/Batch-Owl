@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advance Datatypes</title>
+    <style>
+        h4
+        {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <h1>Advance Datatypes</h1>
+    <ol>
+        <li>Array</li>
+    </ol>
+
+    <h4>How to Declare a variable?</h4>
+    <ol>
+        <li>var (global scope -> attach itself window)</li>
+        <li>let (local scope ->  {  }, script block )</li>
+        <li>const (local + readonly + initilization only)</li>
+    </ol>
+    <h4>How to spot syntax and its meaning? </h4>
+    <ol>
+        <li>[] -> Array </li>
+        <li>{  } -> object, control flow, block code</li>
+        <li>() -> methods, function3 </li>
+        <li> leftItem : rightItem -> css class, json  </li>
+    </ol>
+
+
+    <h4>Array functions </h4>
+    <ol>
+        <li>pop() - remove last element (nth element, n = length) <-> shift() remove first element (0 index element)</li>
+        <li>push() - add element (nth element, n = length) <-> unshift() add element (0th index,at the very begining)</li>
+    </ol>
+</body>
+</html>
+<script>
+    //Array - Declare ?
+    //let fruits = new Array();  //old style - not recommended
+    let l = console.log;
+    let fruits = [];
+    l(fruits);
+    
+    //queue - add element  <--> push for stack style
+    fruits.unshift("apple");
+    fruits.unshift("banana");
+    fruits.unshift("kiwi");
+    l(fruits);
+
+    //queue - remove element  <--> pop for stack style
+    l(fruits.shift());
+    l(fruits);
+
+</script>
+
+
+<!-- //stack- add element
+fruits.push("apple");
+fruits.push("banana");
+fruits.push("kiwi");
+l(fruits);
+l(fruits.length);
+
+// for (let index = 0; index < fruits.length; index++) {
+//     l("process this element: " + fruits[index]);
+// }
+// l(fruits);
+
+//stack - remove element
+l(fruits.pop())
+l(fruits);
+l(fruits.pop())
+l(fruits);
+l(fruits.pop())
+l(fruits); -->

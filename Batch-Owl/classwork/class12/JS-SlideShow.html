@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Project - Slideshow</title>
+    <style>
+        div {
+            padding: 5px;
+        }
+
+        body {
+            background-color: aqua;
+            color: tomato;
+            text-align: center;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+
+        .slider-img {
+            border: 2px solid gold;
+            border-radius: 10px;
+            width: 500px;
+            height: 500px;
+        }
+
+        button {
+            font-size: x-large;
+            background-color: tomato;
+            color: white;
+
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Welcome to our website</h1>
+    <div style="display: flex;align-items: center;justify-content: center;">
+        <div>
+            <button onclick="onPrevious()">Previous</button>
+        </div>
+        <div>
+            <img id="imgSlider" class="slider-img" src="../resources/cheese.jfif" alt="Cheese Image">
+        </div>
+        <div>
+            <button onclick="onNext()">Next</button>
+        </div>
+    </div>
+</body>
+
+</html>
+<script>
+    let imgs = [];
+    const slider = document.getElementById("imgSlider");
+    //may come from api's
+    // function getDataFromApi(){
+    //     fetch('https://www.unsplash.com/images/random')
+    //     .then(function(response){
+    //         return response.json();
+    //     })
+    //     .then(function(data){
+    //         console.log(data);
+    //         imgs = data;
+    //     })
+    // }
+
+    //dummy or static data
+    imgs = ['../resources/cheese.jfif',
+        '../resources/milk.jfif',
+        '../resources/tea.jfif',
+        '../resources/milk.jfif'];
+
+
+    let l = console.log;
+    let imageIndex = 0;
+    function onPrevious() {
+        l('Prev');
+        imageIndex--;
+
+        if (imageIndex == -1)
+            imageIndex = imgs.length - 1;
+
+        slider.src = imgs[imageIndex];
+    }
+
+    function onNext() {
+        l('Next');
+        imageIndex++;
+
+        if (imageIndex == imgs.length)
+            imageIndex = 0;
+
+        slider.src = imgs[imageIndex];
+    }
+</script>

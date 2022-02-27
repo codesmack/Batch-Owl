@@ -31,7 +31,7 @@
    <br>
    (Expected Output: First Angular app will get launched in browser at http://localhost:4200)
       
-# How to install Typescript?
+# Part 4: (Install Typescript)
       
 1. Ensure <b>Part 1: (Node Installation)</b> is completed.
 2. Open Command Propmpt and run cmd:<br>
@@ -42,47 +42,3 @@
    <code>tsc -version</code><br>
    <br>
   (Expected Output: Version 4.x.x  -- some version number)
-
-      
-# How to execute Typescript using Node ?
-      
-1. Create a folder, c:\TypescriptFiles
-2. Create a file "Sample.ts" in folder c:\TypescriptFiles
-3. Add following code in file "Sample.ts"
-<pre>
-      <code>
-class People
-{
-    info : any;
-    name : string;
-    age: number;
-
-    constructor(name : string, age : number, info)
-    {
-        this.name = name;
-        this.age = age;
-        this.info = info;
-    }
-
-    printInfo() : string 
-    {
-        let data = `My name is ${this.name}. My age is ${this.age}`;
-        console.log(data);
-        return data;
-    }
-}
-let p = new People("Walt", 25, "Nice guy");
-p.printInfo();
-</code>
-</pre>
-
-4. Open Command Propmpt and run cmd:<br>
-   <pre>
-      <code>
-      cd c:\TypescriptFiles
-      tsc Sample.ts 
-      node Sample.js
-      </code>
-   </pre>
-   <br>
-   (Expected Output: <mark>My name is Walt. My age is 25<mark>)

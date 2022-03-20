@@ -1,0 +1,62 @@
+<table>
+    <tr>
+        <td>
+            Specify Name:    
+            <input type="text" [(ngModel)]="emp.name" required >
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Age:
+            <input type="number" [(ngModel)]="emp.age" required name="age" id="age">
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Address
+            <input type="text" [(ngModel)]="emp.address" required name="address" id="address">
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button (click)="onSubmit()"  >Submit</button>
+        </td>
+    </tr>
+</table>
+<hr>
+
+<table>
+    <tr style="background-color: aqua;">
+        <td>
+            #
+        </td>
+        <td>
+            Name
+        </td>
+        <td>
+            Age
+        </td>
+        <td>
+            Address
+        </td>
+        <td>
+            
+        </td>
+    </tr>
+    <tr *ngFor="let e of employees; let i = index">
+        <td>
+            {{i + 1}}
+        </td>
+        <td>
+            {{e.name | uppercase }}
+        </td>
+        <td>
+            {{e.age}}
+       </td>
+       <td>
+            {{e.address | titlecase}}
+       </td>
+   <td>
+</td>
+    </tr>
+</table>

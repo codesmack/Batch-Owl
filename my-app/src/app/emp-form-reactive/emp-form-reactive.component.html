@@ -1,0 +1,15 @@
+<form [formGroup]="employeeform" (ngSubmit)="onSubmit(employeeform)" >
+    EmpID <input type="text" name="empId" formControlName="empId" id="">
+    <span *ngIf="submitted && employeeform.get('empId')?.invalid" class="text-danger" >EmpId is required</span>
+    <br>
+    Gender <input type="radio" name="gender" formControlName="gender" value="M" id="">Male
+    <input type="radio" name="gender" formControlName="gender" value="F" id="">Female<br>
+    City <select name="city" formControlName="city" id="">
+        <option value="B">Bangalore</option>
+        <option value="C">Chennai</option>
+        <option value="T">Tamil Nadu</option>
+    </select>
+    <br>
+    <br>
+    <button>Submit</button>
+</form>

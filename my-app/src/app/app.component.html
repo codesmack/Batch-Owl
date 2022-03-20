@@ -1,0 +1,60 @@
+<h2>Instructions:</h2>
+<ul>
+    <li>Change the cholesterol & hemoglobin reading (make it more than 15 or less than 15)</li>
+</ul>
+<hr class="my-5">
+<ol>
+    <li>
+        Your cholesterol levels reading: 
+        <input type="number" [ngClass]="(cholesterolReading > 15 ? 'high' : 'medium')"
+        [(ngModel)]="cholesterolReading">
+        <br>
+        <br>
+        <p *ngIf="(cholesterolReading <= 15)" [ngClass]="paraClass">
+            You are cholesterol level are just prefect ⭐⭐⭐
+        </p>
+        <p *ngIf="(cholesterolReading > 15)" [ngClass]="paraClass">
+            You are cholesterol level are dangerours 😟😟😟
+        </p>
+    </li>
+    <li>
+        Your hemoglobin levels readings:
+        <input type="number" [ngClass]="(hemoglobinReading > 15 ? 'high' : 'medium')"
+        [(ngModel)]="hemoglobinReading">
+        
+        <br>
+        <br>
+        
+        <p *ngIf="(hemoglobinReading <= 15)" [ngClass]="paraClass">
+            You are hemoglobin level are just prefect ⭐⭐⭐
+        </p>
+        <p *ngIf="(hemoglobinReading > 15)" [ngClass]="paraClass">
+            You are hemoglobin level are dangerours 😟😟😟
+        </p>
+    </li>
+</ol>
+
+<!-- 
+
+Font size <input type="number" [(ngModel)]="fontSize">
+Fontsize is {{fontSize}}
+<p [ngStyle]="defaultStyle" [ngClass]="defaultClass">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus commodi doloribus ex libero animi? Velit magni at voluptates dolor molestias. Minima assumenda omnis temporibus totam dolores eligendi tempora soluta voluptatum!
+</p> -->
+
+
+
+
+
+
+<!-- <h1 class="pt-5">Directives</h1>
+Your Readings (ngClass):
+<input type="number"  class="form-control"
+     id="exampleFormControlInput1">
+     <br>
+     <br>
+     <br>
+<div [ngStyle]="paraStyle" >
+   Using "ngStyle": Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit eos expedita ipsa exercitationem impedit in odit fuga dolorum rerum sed, qui voluptas non ratione dicta inventore cumque, vel magnam veritatis?
+</div>
+<hr> -->

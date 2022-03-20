@@ -1,0 +1,11 @@
+<nav *ngIf="isAuthenticated()" class="container border border-dark">
+    <a [routerLink]="['dashboard']" class="me-3">Home</a>
+    <a [routerLink]="['employee']" class="me-3">Employee</a>
+    
+    <a routerLink="pipedemo" class="me-3">Pipe Demo</a>
+    <a routerLink="databinding" class="me-3">DataBinding Demo</a>
+    <a href="#" class="float-end" (click)="onSignout()">Signout, {{userName}}</a>
+</nav>
+<div class="container" style="height: 95vh;">
+    <router-outlet></router-outlet>
+</div>

@@ -1,0 +1,13 @@
+<div  class="container my-5 border border-warning  p-5">
+    <h4 customDisplay [backColor]="'red'">Total Peoples: {{personCount}}</h4>
+    Name <input type="text" name="" id="" [(ngModel)]="personName">
+    <button (click)="onSave()" >Save</button>
+    
+<!-- </div>
+
+<div class="container my-5"> -->
+
+    <app-second (personDeleted)="onUpdate($event)" [persons]="personList"></app-second>
+
+</div>
+

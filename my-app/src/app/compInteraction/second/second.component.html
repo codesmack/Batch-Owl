@@ -1,0 +1,19 @@
+<div  class="border border-dark p-5">
+
+
+<table class="border border-dark">
+    <tr>
+        <td>#</td>
+        <td>Name</td>
+        <td>-</td>
+    </tr>
+   <tr *ngFor="let p of persons; let idx = index;" [ngClass]="idx % 2 == 0 ? 'bg-info':'bg-warning'" >
+    <td>{{idx + 1 }}</td>
+    <td>{{p | charCount:'Length' }}</td>
+    <td>
+        <button class="btn btn-danger" (click)="onDelete(idx)">Delete</button>
+    </td>
+   </tr>
+    
+</table>
+</div>
